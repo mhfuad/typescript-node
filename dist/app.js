@@ -7,6 +7,7 @@ const express_1 = __importDefault(require("express"));
 const bodyParser = require("body-parser");
 const logging_1 = __importDefault(require("./config/logging"));
 const config_1 = __importDefault(require("./config/config"));
+const sample_route_1 = __importDefault(require("./routes/sample.route"));
 const NAMESPACE = 'app';
 const app = (0, express_1.default)();
 /** Logging the request */
@@ -30,15 +31,17 @@ app.use((req, res, next) => {
     }
     next();
 });
+/**Routes */
+app.get("/", (req, res) => {
+    res.send("hello");
+});
+app.use('/sample', sample_route_1.default);
 /**error Handling */
 app.use((req, res, next) => {
     const error = new Error('not found');
     return res.status(404).json({
         message: error.message
     });
-});
-app.get("/", (req, res) => {
-    res.send("hello");
 });
 app.listen(config_1.default.server.port, () => {
     logging_1.default.info(NAMESPACE, `server running on ${config_1.default.server.port}`);
