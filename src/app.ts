@@ -4,6 +4,7 @@ import logging from './config/logging';
 import config from './config/config';
 
 import sampleRoutes from "./routes/sample.route"
+import userRoutes from "./routes/user.route"
 
 const NAMESPACE = 'app';
 
@@ -40,6 +41,7 @@ app.get("/", (req: Request, res: Response) => {
     res.send("hello");
 });
 app.use('/sample', sampleRoutes);
+app.use('/user', userRoutes);
 
 /**error Handling */
 app.use((req: Request, res: Response, next: NextFunction):object => {
