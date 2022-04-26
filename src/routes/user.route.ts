@@ -6,8 +6,8 @@ import extracJWT from "../middleware/extracJWT";
 const router = express.Router();
 
 router.get('/validate', controller.validationToken)
-router.get('/register', controller.registration)
-router.get('/login', controller.login)
+router.post('/register', controller.registration)
+router.post('/login', controller.login)
 router.get('/get/all', extracJWT,  controller.getAllUser)
 
 export = router ;

@@ -11,3 +11,7 @@ npm install --save-dev @types/dotenv
 
 npm install bcryptjs jsonwebtoken
 npm install --save-dev @types/jsonwebtoken @types/bcryptjs
+
+npm install --save sequelize
+npm install --save pg pg-hstore
+npm i sequelize-cli -D

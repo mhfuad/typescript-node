@@ -8,6 +8,7 @@ const bodyParser = require("body-parser");
 const logging_1 = __importDefault(require("./config/logging"));
 const config_1 = __importDefault(require("./config/config"));
 const sample_route_1 = __importDefault(require("./routes/sample.route"));
+const user_route_1 = __importDefault(require("./routes/user.route"));
 const NAMESPACE = 'app';
 const app = (0, express_1.default)();
 /** Logging the request */
@@ -36,6 +37,7 @@ app.get("/", (req, res) => {
     res.send("hello");
 });
 app.use('/sample', sample_route_1.default);
+app.use('/user', user_route_1.default);
 /**error Handling */
 app.use((req, res, next) => {
     const error = new Error('not found');

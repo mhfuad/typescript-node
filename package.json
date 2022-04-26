@@ -4,7 +4,7 @@
   "description": "node.js with typescript setup",
   "main": "index.js",
   "scripts": {
-    "start": "node dist/app.js",
+    "start": "node build/app.js",
     "dev": "nodemon src/app.ts",
     "build": "tsc -P ."
   },
@@ -23,7 +23,10 @@
     "body-parser": "^1.20.0",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
-    "jsonwebtoken": "^8.5.1"
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.19.0"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
@@ -33,6 +36,7 @@
     "@types/jsonwebtoken": "^8.5.8",
     "@types/node": "^17.0.23",
     "nodemon": "^2.0.15",
+    "sequelize-cli": "^6.4.1",
     "ts-node": "^10.7.0",
     "typescript": "^4.6.3"
   }
