@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import logging from "../config/logging";
-import config from "../config/config";
+import config from "../config/serverConfig";
 import bcryptjs from "bcryptjs";
 import jwt from "jsonwebtoken";
 

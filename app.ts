@@ -1,10 +1,12 @@
 import express, { Application, Request, Response, NextFunction} from 'express';
 import bodyParser = require('body-parser'); 
 import logging from './config/logging';
-import config from './config/config';
+import config from './config/serverConfig';
 
 import sampleRoutes from "./routes/sample.route"
 import userRoutes from "./routes/user.route"
+
+import db from './models'
 
 const NAMESPACE = 'app';
 
@@ -51,7 +53,9 @@ app.use((req: Request, res: Response, next: NextFunction):object => {
         message: error.message
     })
 })
-
-app.listen(config.server.port, ()=> {
-    logging.info(NAMESPACE, `server running on ${config.server.port}`)
+db.sequelize.sync().then(()=> {
+    app.listen(config.server.port, ()=> {
+        logging.info(NAMESPACE, `server running on ${config.server.port}`)
+    })
 })
+
