@@ -1,7 +1,7 @@
 import express from "express";
 
 import controller from '../controller/user.controller';
-import extracJWT from "../middleware/extracJWT";
+import extracJWT from "../src/middleware/extracJWT";
 
 const router = express.Router();
 

@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 const express_1 = __importDefault(require("express"));
 const user_controller_1 = __importDefault(require("../controller/user.controller"));
-const extracJWT_1 = __importDefault(require("../middleware/extracJWT"));
+const extracJWT_1 = __importDefault(require("../src/middleware/extracJWT"));
 const router = express_1.default.Router();
 router.get('/validate', user_controller_1.default.validationToken);
 router.post('/register', user_controller_1.default.registration);

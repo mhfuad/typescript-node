@@ -1,7 +1,7 @@
 import express, { Application, Request, Response, NextFunction} from 'express';
 import bodyParser = require('body-parser'); 
-import logging from '../config/logging';
-import config from '../config/config';
+import logging from './config/logging';
+import config from './config/config';
 
 import sampleRoutes from "./routes/sample.route"
 import userRoutes from "./routes/user.route"
