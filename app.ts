@@ -6,7 +6,7 @@ import config from './config/serverConfig';
 import sampleRoutes from "./routes/sample.route"
 import userRoutes from "./routes/user.route"
 
-import db from './models'
+//import db from './models'
 
 const NAMESPACE = 'app';
 
@@ -53,9 +53,9 @@ app.use((req: Request, res: Response, next: NextFunction):object => {
         message: error.message
     })
 })
-db.sequelize.sync().then(()=> {
+//db.sequelize.sync().then(()=> {
     app.listen(config.server.port, ()=> {
         logging.info(NAMESPACE, `server running on ${config.server.port}`)
     })
-})
+//})
 
